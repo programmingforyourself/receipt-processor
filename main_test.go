@@ -635,8 +635,8 @@ func TestJSONExample1(t *testing.T) {
 		t.Errorf("Should have 15 points ... %v", breakdown)
 	}
 	lenBreakdown := len(breakdown)
-	if lenBreakdown != 8 {
-		t.Errorf("Should have 8 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
+	if lenBreakdown != 10 {
+		t.Errorf("Should have 10 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
 	}
 }
 
@@ -650,8 +650,8 @@ func TestJSONExample2(t *testing.T) {
 		t.Errorf("Should have 28 points ... %v", breakdown)
 	}
 	lenBreakdown := len(breakdown)
-	if lenBreakdown != 11 {
-		t.Errorf("Should have 11 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
+	if lenBreakdown != 16 {
+		t.Errorf("Should have 16 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
 	}
 }
 
@@ -661,11 +661,11 @@ func TestJSONExample3(t *testing.T) {
 		t.Errorf("Validation errors for receipt %v", receiptExample3)
 	}
 	totalPoints, breakdown := receiptExample3.GetTotalPointsAndBreakdown()
-	if totalPoints != 109 {
-		t.Errorf("Should have 109 points ... %v", breakdown)
+	if totalPoints != 149 {
+		t.Errorf("Should have 149 points not %d ... %v", totalPoints, breakdown)
 	}
 	lenBreakdown := len(breakdown)
-	if lenBreakdown != 10 {
-		t.Errorf("Should have 10 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
+	if lenBreakdown != 14 {
+		t.Errorf("Should have 14 items in the breakdown not %d ... %v", lenBreakdown, breakdown)
 	}
 }

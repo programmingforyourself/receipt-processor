@@ -73,6 +73,16 @@ func (item *Item) PointsForItem() (int, string) {
 	return points, message
 }
 
+func (item *Item) PointsForItemTitle() (int, string) {
+	points := 0
+	trimmedDescription := strings.TrimSpace(item.ShortDescription)
+	if trimmedDescription[0] == 'g' || trimmedDescription[0] == 'G' {
+		points = 10
+	}
+	message := fmt.Sprintf("%d point(s) for item title (%s | %s)", points, item.ShortDescription, item.Price)
+	return points, message
+}
+
 func (receipt *Receipt) Validate() error {
 	var errors []string
 
@@ -215,6 +225,9 @@ func (receipt *Receipt) GetTotalPointsAndBreakdown() (int, []string) {
 
 	for _, item := range receipt.Items {
 		points, message = item.PointsForItem()
+		totalPoints += points
+		breakdown = append(breakdown, message)
+		points, message = item.PointsForItemTitle()
 		totalPoints += points
 		breakdown = append(breakdown, message)
 	}

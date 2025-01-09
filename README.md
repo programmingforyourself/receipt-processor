@@ -20,6 +20,8 @@ fields in each struct and calculate expected points for each rule defined in
 [the
 rules](https://github.com/fetch-rewards/receipt-processor-challenge?tab=readme-ov-file#rules).
 
+> Also points for an additional rule if an item's description starts with a G/g
+
 ```
 go test
 ```
